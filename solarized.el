@@ -145,8 +145,8 @@ Alpha should be a float between 0 and 1."
           (s-base01    "#586e75")
           ;; primary content
           (s-base00    "#657b83")
-          (s-base0     "#839496")
           ;; comments
+          (s-base0     "#839496")
           (s-base1     "#93a1a1")
           ;; background highlight light
           (s-base2     "#eee8d5")
@@ -267,7 +267,7 @@ customize the resulting theme."
 ;;;; Built-in
 ;;;;; basic faces
      '(button ((t (:underline t))))
-     `(cursor ((,class (:foreground ,base03 :background ,base0
+     `(cursor ((,class (:foreground ,base03 :background "red"
                                     :inverse-video t))))
      `(default ((,class (:foreground ,base0 :background ,base03))))
      `(error ((,class (:foreground ,orange))))
@@ -291,21 +291,21 @@ customize the resulting theme."
      `(minibuffer-prompt ((,class (:foreground ,base0))))
      `(mode-line
        ((,class (:inverse-video unspecified
-                                :overline ,s-mode-line-bg
-                                :underline ,s-mode-line-underline
+                                :overline nil
+                                :underline nil
                                 :foreground ,s-mode-line-fg
                                 :background ,s-mode-line-bg
-                                :box (:line-width 1 :color ,s-mode-line-bg
-                                                  :style unspecified)))))
+                                :height 0.8
+                                :box (:line-width 1 :color ,magenta)))))
      `(mode-line-buffer-id ((,class (:foreground ,s-mode-line-buffer-id-fg :weight bold))))
      `(mode-line-inactive
        ((,class (:inverse-video unspecified
-                                :overline ,s-mode-line-inactive-bc
-                                :underline ,s-mode-line-underline
+                                :overline nil
+                                :underline nil
                                 :foreground ,s-mode-line-inactive-fg
                                 :background ,s-mode-line-inactive-bg
-                                :box (:line-width 1 :color ,s-mode-line-inactive-bg
-                                                  :style unspecified)))))
+                                :height 0.8
+                                :box t))))
      `(region ((,class (:foreground ,base03 :background ,base1))))
      `(secondary-selection ((,class (:background ,base02))))
      `(shadow ((,class (:foreground ,base01))))
@@ -437,7 +437,7 @@ customize the resulting theme."
      `(font-lock-doc-face ((,class (:foreground ,(if solarized-distinct-doc-face violet cyan)
                                                 :slant ,s-maybe-italic))))
      `(font-lock-function-name-face ((,class (:foreground ,blue))))
-     `(font-lock-keyword-face ((,class (:foreground ,green :weight ,s-maybe-bold))))
+     `(font-lock-keyword-face ((,class (:foreground ,s-base03))))
      `(font-lock-negation-char-face ((,class (:foreground ,yellow :weight bold))))
      `(font-lock-preprocessor-face ((,class (:foreground ,blue))))
      `(font-lock-regexp-grouping-construct ((,class (:foreground ,yellow :weight bold))))
@@ -519,7 +519,7 @@ customize the resulting theme."
      `(avy-lead-face-2 ((,class (:inherit isearch :background ,cyan))))
      `(avy-background-face ((,class (:inherit font-lock-comment-face))))
 ;;;;; bm
-     `(bm-face ((,class (:overline ,base0))))
+     `(bm-face ((,class (:background ,magenta-hc))))
      `(bm-fringe-face ((,class (:overline ,base0))))
      `(bm-fringe-persistent-face ((,class (:overline ,base0))))
      `(bm-persistent-face ((,class (:overline ,base0))))
